@@ -5,6 +5,12 @@ import time
 
 path = os.getcwd() + '\\'
 
+image_parent_dir = "."
+click_image_dir_name = 'click_img'
+ignore_image_dir_name = 'no_img'
+pic_ext_name = '.png'
+match_percent = 0.85
+
 
 class ImageElement(object):
     def __init__(self, imgPath, imgObj, imgW, imgH):
@@ -15,8 +21,8 @@ class ImageElement(object):
         self.imgH = imgH
 
 
-img_dir = "click_img2"
-no_img_dir = "no_img2"
+# img_dir = "click_img2"
+# no_img_dir = "no_img2"
 
 # img_path1 = './' + img_dir + '/1.png'
 # a_img1 = cv2.imread(img_path1, -1)  # 读取按钮图片
@@ -47,7 +53,6 @@ no_img_dir = "no_img2"
 # no_a2, no_w2, no_h2 = no_img2.shape[::-1]  # a   ;w 图片宽度;h 图片高度
 # print("图片忽略2[%s] 通道数a=%d, 宽w=%d, 高h=%d" % (no_img_path2, no_a2, no_w2, no_h2))
 
-match_percent = 0.85
 
 ignore_data2 = []
 click_data2 = []
@@ -318,13 +323,9 @@ def op1_just_sleep():
 def click_back_key():
     os.system('adb shell input keyevent 4 ')  # 点击返回
 
-image_parent_dir = "."
-click_image_dir_name = 'click_img'
-ignore_image_dir_name = 'no_img'
-
 def main():
     print("查找需要点击按钮图标列表, begin")
-    list_dir_files(filepathList, image_parent_dir, click_image_dir_name, ".png")
+    list_dir_files(filepathList, image_parent_dir, click_image_dir_name, pic_ext_name)
     print("查找需要点击按钮图标列表, 打印列表")
     print("   %r " % filepathList)
     print("查找需要点击按钮图标列表, 打印列表结束")
@@ -332,7 +333,7 @@ def main():
     print("")
 
     print("查找需要忽略图标列表-----begin")
-    list_dir_files(nofilepathList, image_parent_dir, ignore_image_dir_name, ".png")
+    list_dir_files(nofilepathList, image_parent_dir, ignore_image_dir_name, pic_ext_name)
     print("查找需要忽略图标列表, 打印列表")
     print("   %r " % nofilepathList)
     print("查找需要忽略图标列表, 打印列表结束")
