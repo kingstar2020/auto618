@@ -18,19 +18,9 @@ click_image2_dir_name = 'click_img2'
 
 # 操作累心1， 仅等待
 def op1_just_sleep():
-    time.sleep(8)
+    time.sleep(15)
     # sweep(550, 500, 550, 600, 15000)  # 滑动5秒
     time.sleep(5)
-    # time.sleep(8)
-    # sweep(550, 1600, 550, 600, 5000)
-    # sweep(550, 1600, 550, 600, 5000)
-    # sweep(550, 1600, 550, 600, 5000)
-
-
-# 操作累心1， 仅等待
-def op2just_sleep():
-    # sweep(550, 500, 550, 600, 15000)  # 滑动5秒
-    time.sleep(3)
     # sweep(550, 1600, 550, 600, 5000)
     # sweep(550, 1600, 550, 600, 5000)
     # sweep(550, 1600, 550, 600, 5000)
@@ -47,9 +37,10 @@ def main():
 
     print('sn:', sn)
 
-    # command.set_device_sn('851QZDRN33713')
+    # command.set_device_sn('192.168.50.150:5555')
+    # command.set_device_sn('UJN0221227001889')
     command.set_device_sn(sn)
-
+    
     print("查找需要点击按钮图标列表, begin")
     file_path_list = []
     handleimage.list_dir_files(file_path_list, image_parent_dir, click_image_dir_name, pic_ext_name)
@@ -92,7 +83,6 @@ def main():
 
             # 执行操作类型1
             op1_just_sleep()
-            # op2just_sleep()
 
             # 执行点击返回操作
             command.click_back_key()
