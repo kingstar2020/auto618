@@ -104,10 +104,10 @@ def main():
                     command.click(lists[0][0][j][0], lists[0][0][j][1])
 
                     # 执行操作类型3， 等待后返回
-                    op3_wait_then_back(3)
+                    op3_wait_then_back(1)
 
                 # 向下滑动
-                command.sweep(550, 1800, 550, 400, 2000)
+                command.sweep(550, 1800, 550, 400, 500)
                 # 重新识别出最终要点击的坐标
                 lists = handleimage.match_img(click_images_list, ignore_images_list)
                 print("match_img return lists begin")

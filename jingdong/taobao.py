@@ -18,12 +18,13 @@ click_image2_dir_name = 'click_img2'
 
 # 操作累心1， 仅等待
 def op1_just_sleep():
+    time.sleep(1.5)
+    command.sweep(550, 1600, 550, 600, 1000)
     time.sleep(8)
-    time.sleep(5)
-    # time.sleep(3)
+    time.sleep(3)
+    # time.sleep(1)
     # time.sleep(8)
     # sweep(550, 500, 550, 600, 15000)  # 滑动5秒
-    # sweep(550, 1600, 550, 600, 5000)
     # sweep(550, 1600, 550, 600, 5000)
     # sweep(550, 1600, 550, 600, 5000)
 
