@@ -20,7 +20,7 @@ click_image2_dir_name = 'click_img2'
 def op1_just_sleep():
     time.sleep(15)
     # sweep(550, 500, 550, 600, 15000)  # 滑动5秒
-    time.sleep(5)
+    time.sleep(15)
     # sweep(550, 1600, 550, 600, 5000)
     # sweep(550, 1600, 550, 600, 5000)
     # sweep(550, 1600, 550, 600, 5000)
